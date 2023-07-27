@@ -34,7 +34,11 @@
           <li><a href="#">Acerca de nosotros</a></li>
           <li><a href="{% url 'apps.posts:posts' %}">Posts</a></li>
           <li><a href="{% url 'apps.contacto:contacto' %}">Contacto</a></li>
-          <li><a href="{% url 'apps.usuario:login' %}">Login</a></li>
+          {% if user.is_authenticated %}
+            <li><a href= "{% url 'apps.usuario:logout' %}">Logout</a></li>
+          {% else %}
+            <li><a href="{% url 'apps.usuario:login' %}">Login</a></li>
+          {% endif %}
 
          
         </ul>
