@@ -31,4 +31,4 @@ class LogoutUsuario(LogoutView):
     def get_success_url(self):
         messages.success(self.request, 'Logout exitoso')
 
-        return reverse('apps.usuario.logout')
+        return reverse('apps.usuario:logout')
