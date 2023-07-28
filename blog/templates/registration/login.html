@@ -20,6 +20,9 @@
             <table>{{ form }}</table>
             <br>
             <a style="color: black;" href="{% url 'apps.usuario:registrar' %}">Todavía no está registrado? Registrate</a>
+            <br>
+            <br>
+            <a style="color: black;" href="{% url 'apps.usuario:password_reset_form' %}">Olvidaste tu contraseña?</a>
             <br><br>
             <button type="submit" class="btn btn-sucess btn-lg px-3">Iniciar sesión</button>
         </div>
