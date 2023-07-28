@@ -24,8 +24,12 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
     path('', index, name='index'),
     path('', include('apps.posts.urls')),
+    path('', include('apps.contacto.urls')),
+    path('', include('apps.usuario.urls')),
+    path('', include('django.contrib.auth.urls')),
     #path('posts/', posts, name='posts'),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += staticfiles_urlpatterns()

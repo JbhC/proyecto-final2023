@@ -29,13 +29,19 @@
         <a class="flex-sm-fill text-sm-center nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
 
         <div>
-          <ul class="nav-links">
-            <li><a href="{% url 'index' %}">Inicio</a></li>
-            <li><a href="#">Acerca de nosotros</a></li>
-            <li><a href="{% url 'apps.posts:posts' %}">Posts</a></li>
-            <li><a href="#">Contacto</a></li>
-            <li><a href="#">Registro</a></li>
-          </ul>
+        <ul class="nav-links">
+          <li><a href="{% url 'index' %}">Inicio</a></li>
+          <li><a href="#">Acerca de nosotros</a></li>
+          <li><a href="{% url 'apps.posts:posts' %}">Posts</a></li>
+          <li><a href="{% url 'apps.contacto:contacto' %}">Contacto</a></li>
+          {% if user.is_authenticated %}
+            <li><a href= "{% url 'apps.usuario:logout' %}">Logout</a></li>
+          {% else %}
+            <li><a href="{% url 'apps.usuario:login' %}">Login</a></li>
+          {% endif %}
+
+         
+        </ul>
         </div>
     </nav>
 
@@ -50,7 +56,7 @@
   </main>
   <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
     <div class="container text-center">
-        <small>Copyright &copy; Johanaaaaaaa</small>
+        <small>Copyright &copy; Johana A. Centurión</small>
     </div>
   </footer>
 
